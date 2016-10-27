@@ -1,0 +1,15 @@
+<h2>WDInstagram Posts</h2>
+
+<div data-ng-repeat="post in vm.posts">
+  <p><a data-ui-sref="WDInstagramShow({id: $index})"></a></p>
+  <img ng-src="{{ post.photo_url }}">
+  <p>{{ post.author }}</p>
+  <p>{{ post.body }}</p>
+</div>
+
+<form data-ng-submit="vm.create()">
+  <input placeholder="Author" data-ng-model="vm.newPost.authorName">
+  <input placeholder="Body" data-ng-model="vm.newPost.body">
+  <input placeholder="Photo URL" data-ng-model="vm.newPost.photo_url">
+  <button type="submit">Create Post</button>
+</form>
